@@ -34,7 +34,7 @@ bool CApp::OnInit() {
 	//board.Display();
 
 	srand(time(0));
-	timer = SDL_AddTimer(800, MoveShapeDown, this);
+	timer = SDL_AddTimer(Current_Speed, MoveShapeDown, this);
 
 //	Reset();
 

@@ -17,29 +17,26 @@ CApp::CApp() {
 
 	Running		= true;
 	Lines_Dropped	= 0;
-
-
+	Current_Speed	= 800;
 }
 
 
 
-void CApp::DrawBoard() { 
-
-	int y = 124;
-
-	for (vector<vector<int> >::const_iterator i = board.board.begin(); i != board.board.end(); i++) { 
-		int x = 55;
-		for (vector<int>::const_iterator j = (*i).begin(); j != (*i).end(); j++) {
+void CApp::DrawBoard(Mult_Line to_draw, int x, int y, int w, int h) { 
+	for (Mult_Line_CItr i = to_draw.begin(); i != to_draw.end(); i++) { 
+		int _x = x;
+		for (Line_CItr j = (*i).begin(); j != (*i).end(); j++) {
 			if ((*j) == 1)  
-				CSurface::OnDraw(Surf_Display,Surf_Brick,x,y);
+				CSurface::OnDraw(Surf_Display,Surf_Brick,_x,y);
 			else if  ((*j) == 2)  
-				CSurface::OnDraw(Surf_Display,Surf_BrickGrey,x,y);
+				CSurface::OnDraw(Surf_Display,Surf_BrickGrey,_x,y);
 			
-			x += 30;
+			_x += w;
 		}
-		y += 30;
+		y += h;
 	}
 }
+
 
 void CApp::MoveShape(int x, int y) {
 	Shape tmp_shape = current_shape;
@@ -118,6 +115,8 @@ Uint32 CApp::MoveShapeDown(Uint32 interval, void* param)
 
 	SDL_PushEvent(&event);
 
+
+	cout << interval << endl;
 	return interval;
 }
 

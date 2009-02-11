@@ -6,6 +6,8 @@
 #include "CEvent.h"
 #include "Shape.hpp"
 #include "Board.hpp"
+#include "generic.hpp"
+
 
 class CApp : public CEvent {
 	private:
@@ -21,8 +23,10 @@ class CApp : public CEvent {
 		SDL_TimerID	timer;
 
 		Shape		current_shape;
+		Shape		next_shape;
 		Board		board;
 		int		Lines_Dropped;
+		int		Current_Speed;
 
 	private:
 //		SDL_Surface*	Surf_Grid;
@@ -30,7 +34,7 @@ class CApp : public CEvent {
 	private:
 
 	public: 
-		void DrawBoard();
+		void DrawBoard(Mult_Line,int,int,int,int);
 		void MoveShape(int,int);
 		static Uint32 MoveShapeDown(Uint32, void*);
 
