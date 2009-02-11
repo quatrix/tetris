@@ -1,1 +1,0 @@
-g++ *.cpp `sdl-config --cflags --libs` -lSDL_image -o CApp

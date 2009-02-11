@@ -1,2 +1,13 @@
 yay, sdl tetris.... 
 functional but lacks some features...
+
+
+here's how to compile:
+
+make sure you have libsdl + sdl-image and png support compiled
+then just issue:
+
+g++ *.cpp `sdl-config --cflags --libs` -lSDL_image -o Tetris 
+./Tetris
+
+
