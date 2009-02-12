@@ -20,13 +20,14 @@ class CApp : public CEvent {
 		SDL_Surface*	Surf_Brick;
 		SDL_Surface*	Surf_BrickGrey;
 
-		SDL_TimerID	timer;
-
 		Shape		current_shape;
 		Shape		next_shape;
 		Board		board;
 		int		Lines_Dropped;
 		int		Current_Speed;
+		int		last_tick;
+
+	public:
 
 	private:
 //		SDL_Surface*	Surf_Grid;

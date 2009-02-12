@@ -104,23 +104,6 @@ int CApp::OnExecute() {
     return 0;
 }
 
-Uint32 CApp::MoveShapeDown(Uint32 interval, void* param)
-{
-	SDL_Event event;
-
-	event.type = SDL_USEREVENT;
-	event.user.code = 666;
-	event.user.data1 = 0;
-	event.user.data2 = 0;
-
-	SDL_PushEvent(&event);
-
-
-	cout << interval << endl;
-	return interval;
-}
-
-
 int main(int argc, char* argv[]) {
     CApp theApp;
 
