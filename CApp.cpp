@@ -101,6 +101,10 @@ int CApp::OnExecute() {
 
 	OnCleanup();
 
+	// stoping the while from iterating too fast
+	// to lower cpu usage
+	SDL_Delay(50);
+
     return 0;
 }
 
